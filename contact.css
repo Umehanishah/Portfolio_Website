@@ -1,0 +1,272 @@
+body{
+    margin: 0px;
+    background-color: black;
+}
+
+.main{
+    margin: 0px;
+    background-image: url('images/img-2.jpg');
+    background-size: cover;        
+    background-repeat: no-repeat;  
+    background-position: center;   
+    height:100vh;                                      
+}
+.navigation{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; 
+    padding: 1rem;
+    padding-right: 10%;
+    background-color: rgba(0, 0, 0, 0.74);
+    z-index: 999;
+}
+
+.navigation ul{
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+    margin: 1% 0%;
+    padding-right: 10%;
+}
+
+li a{
+    position: relative;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: medium;
+    padding-top: 24px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+li a::after {
+    content: '';
+    position: absolute;
+    left: 0%; 
+    bottom: -8px; 
+    width: 50%; 
+    height: 2px;
+    background-color: #18d26e;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+    transform-origin: left;
+}
+
+li a:hover::after,
+li a.active::after {
+    transform: scaleX(1);
+}
+
+li a:hover {
+    color: #18d26e;
+    font-weight: bold;
+}
+
+li a.active {
+  color: #18d26e;
+  font-weight: bold;
+}
+
+
+.paragraph {
+    width: 40em;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 8%;
+    padding-bottom: 5%;
+}
+.paragraph h1{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.paragraph p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    font-style: italic;
+    color: white;
+    line-height: 30px;
+}
+
+.breadcrumb{
+    display: flex;
+    background-color: rgb(31, 30, 30);
+    color: white;
+}
+
+.breadcrumb ul{
+    display: flex;
+    gap: 20px;
+    margin-left: 5%;
+    list-style-type: none;
+}
+
+.contact{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20%;
+    color: white;
+    margin: 5% 10%;
+}
+
+.cell{
+    display: flex;
+    gap: 30px;
+}
+
+.cell img{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin: 0;
+    padding: 10px 0px;
+}
+
+.bar {
+  margin: 0;
+  padding: 15px 0px;
+  line-height: 0;
+  display: block;
+  height: 0px;         
+}
+
+.soc{
+ display: flex;
+    gap: 5px;
+}
+.soc img{
+    background-color: #6e6e6e;
+    border-radius: 100%;
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.soc img:hover{
+     background-color: white;
+}
+
+.form {
+  margin: 10% auto;
+  width: 60em;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.base {
+  display: flex;
+  gap: 10px;
+}
+
+.base input{
+    width: 35em;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form input,
+.form textarea {
+  padding: 12px 15px;
+  border: 1px solid rgb(65, 65, 65);
+  border-radius: 5px;
+  font-size: 16px;
+  resize: none;
+  background-color: transparent;
+  color: white;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px #18d26e;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.form button {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 25px;
+  background-color: #18d26e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #029848;
+}
+
+.intro{
+    background-color: rgb(19, 19, 19);
+    color: white;
+    justify-items: center;
+    padding-top: 15px;
+}
+.intro h3{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+    margin-top: 20px;
+}
+.intro p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     text-align: center;
+     font-style: italic;
+     width: 40em;
+}
+
+.link-2{
+    display: flex;
+    gap: 20px;
+    padding: 20px 0px;
+}
+
+.link-2 img{
+    background-color: #18d26e;
+    border-radius: 100%;
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.link-2 img:hover{
+     background-color: white;
+}
+.copyright{
+     background-color: rgb(19, 19, 19);
+    color: white;
+    text-align: center;
+    padding: 20px 0px;
+    font-size: small;
+}
+.copyright span{
+    color: #18d26e;
+}

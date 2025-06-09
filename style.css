@@ -1,0 +1,191 @@
+body{
+    margin: 0px;
+    background-color: black;
+}
+
+.main{
+    margin: 0px;
+    background-image: url('images/img-2.jpg');
+    background-size: cover;        
+    background-repeat: no-repeat;  
+    background-position: center;   
+    height:100vh;                                      
+}
+.navigation{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; 
+    padding: 1rem;
+    padding-right: 10%;
+    background-color: rgba(0, 0, 0, 0.74);
+    z-index: 999;
+}
+
+.navigation ul{
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+    margin: 1% 0%;
+    padding-right: 10%;
+}
+
+li a{
+    position: relative;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: medium;
+    padding-top: 24px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+li a::after {
+    content: '';
+    position: absolute;
+    left: 0%; 
+    bottom: -8px; 
+    width: 50%; 
+    height: 2px;
+    background-color: #18d26e;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+    transform-origin: left;
+}
+
+li a:hover::after,
+li a.active::after {
+    transform: scaleX(1);
+}
+
+li a:hover {
+    color: #18d26e;
+    font-weight: bold;
+}
+
+li a.active {
+  color: #18d26e;
+  font-weight: bold;
+}
+
+.banner{
+    padding-top: 12%;
+    margin-left: 8%;
+    color: white;
+    line-height: 2em;
+}
+
+.banner h1{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 80px;
+}
+
+.banner h3{
+    font-family:'Trebuchet MS','Lucida Sans Unicode','Lucida Grande',
+                'Lucida Sans',Arial,sans-serif;
+    font-size:30px;
+    font-weight: lighter;
+    display: flex;              
+    align-items: center;        
+    gap: 8px; 
+}
+
+.typing{
+  position:relative;
+  display:inline-block;  
+}
+
+.typing::after{
+  display:inline-block;               
+  content:"";
+  white-space:nowrap;
+  overflow:hidden;
+  border-right:2px solid;             
+  animation:
+      typeLoop 25s steps(10,end) infinite,   
+      blink     0.5s step-end        infinite;
+}
+
+@keyframes typeLoop{
+   0%  {content:"Developer";  width:0ch;}       
+   7.5%{width:9ch;}                             
+  18% {width:9ch;}                              
+  25.5%{content:"Developer"; width:0ch;}                             
+  26.5%{content:"Designer";   width:0ch;}        
+  33.2%{width:8ch;}                              
+  43.1%{width:8ch;}                              
+  49.8%{content:"Designer";   width:0ch;}                            
+  50.8%{content:"Freelancer"; width:0ch;}       
+  59.1%{width:10ch;}                             
+  70.8%{width:10ch;}                            
+  79.1%{width:0ch;}                              
+ 100% {content:"Freelancer"; width:0ch;}
+}
+
+/* caret blink */
+@keyframes blink{
+  50%{border-color:transparent;}
+}
+
+.link{
+    display: flex;
+    gap: 20px;
+}
+
+.link img{
+    background-color: white;
+    border-radius: 100%;
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+}
+
+.link img:hover{
+    background-color: #18d26e;
+}
+
+.intro{
+    color: white;
+    justify-items: center;
+}
+.intro h3{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+    margin-top: 20px;
+}
+.intro p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     text-align: center;
+     font-style: italic;
+     width: 40em;
+}
+
+.link-2{
+    display: flex;
+    gap: 20px;
+    padding: 20px 0px;
+}
+
+.link-2 img{
+    background-color: #18d26e;
+    border-radius: 100%;
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.link-2 img:hover{
+     background-color: white;
+}
+.copyright{
+    color: white;
+    text-align: center;
+    padding: 20px 0px;
+    font-size: small;
+}
+.copyright span{
+    color: #18d26e;
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <div class="navigation">
+           <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html"class="active">Contact</a></li>
+            </ul>
+    </div>
+
+        <div class="paragraph">
+        <h1>Let's Connect</h1>
+        <p>I'm always open to new opportunities, collaborations, or just a friendly chat. Whether you have a project in mind or simply want to say hello, feel free to reach out using the form below. I`ll get back to you as soon as possible!</p>
+    </div>
+
+    <div class="breadcrumb">
+        <ul>
+        <li><a href="index.html" >Home</a></li>
+        /
+        <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="contact">
+        <div class="cell">
+            <img src="images/address.jpg" alt="icon">
+            <div class="bar">
+            <h3>Address</h3>
+            <p>Garden west, Karachi-Pakistan.</p>
+            </div>
+        </div>
+
+         <div class="cell">
+            <img src="images/call.jpg" alt="icon">
+            <div class="bar">
+            <h3>Call Me</h3>
+            <p>0304-2090630</p>
+            </div>
+        </div>
+
+         <div class="cell">
+            <img src="images/email.jpg" alt="icon">
+            <div class="bar">
+            <h3>Email At</h3>
+            <p>missumehani@gmail.com</p>
+            </div>
+        </div>
+
+         <div class="cell">
+            <img src="images/social.jpg" alt="icon">
+            <div class="bar">
+            <h3>Social Profiles</h3>
+            <p class="soc">
+                <a href="https://www.facebook.com/hansa.samoon.5" target="_blank">
+         <img src="images/facebook.png" alt="facebook" /></a>
+        
+        <a href="https://www.instagram.com/umehani_shah/" target="_blank">
+        <img src="images/instagram.png" alt="instagram"/></a>
+        
+        <a href="https://www.linkedin.com/in/umehani-shah/" target="_blank">
+        <img src="images/linkedin.png" alt="linkedin"/></a>
+        
+        <a href="https://x.com/Umehanishah" target="_blank">
+        <img src="images/twitter.png" alt="twitter"/></a>
+        
+            </p>
+            </div>
+        </div>
+        
+    </div>
+
+
+<div class="form">
+  <form id="contact-form">
+    <div class="base">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+    </div>
+    <input type="text" name="subject" placeholder="Subject" required />
+    <textarea name="message" placeholder="Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <p id="form-status" style="color: #18d26e; margin-top: 10px;"></p>
+</div>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // prevent default redirect
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://formspree.io/f/meokakae', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      });
+
+      if (response.ok) {
+        status.textContent = "Thanks for your message! We'll get back to you soon.";
+        form.reset(); 
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          status.textContent = data.errors.map(error => error.message).join(", ");
+        } else {
+          status.textContent = "Oops! There was a problem submitting your form.";
+        }
+      }
+    } catch (error) {
+      status.textContent = "Oops! There was a problem submitting your form.";
+    }
+  });
+</script>
+
+
+
+
+
+
+    <div class="intro">
+        <h3>Personal</h3>
+        <p>"Welcome to my portfolio — a snapshot of my journey, skills, and experiences."
+            <br>
+        "This is more than a website — it's a window into my professional world, complete with my resume, experiences, and technical skills."</p>
+    
+     <div class="link-2">
+        <a href="https://www.facebook.com/hansa.samoon.5" target="_blank">
+        <img src="images/facebook.png" alt="facebook" /></a>
+        
+        <a href="https://www.instagram.com/umehani_shah/" target="_blank">
+        <img src="images/instagram.png" alt="instagram"/></a>
+        
+        <a href="https://www.linkedin.com/in/umehani-shah/" target="_blank">
+        <img src="images/linkedin.png" alt="linkedin"/></a>
+        
+        <a href="https://x.com/Umehanishah" target="_blank">
+        <img src="images/twitter.png" alt="twitter"/></a>
+        
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="copyright">
+        <p>Copyright <span>Personal</span> All Rights Reserved</p>
+        <p>Designed by <span>Umehani Shah</span></p>
+    </div>
+
+</body>
+</html>
