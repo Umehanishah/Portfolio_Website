@@ -4,7 +4,7 @@ body{
 }
 
 .navigation{
-    position: fixed;
+   position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -22,6 +22,22 @@ body{
     gap: 40px;
     margin: 1% 0%;
     padding-right: 10%;
+}
+
+/* --- HAMBURGER – hidden on wide screens -------------------------- */
+.hamburger{
+  display:none;                  /* turned on in the media query */
+  flex-direction:column;
+  gap:6px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.hamburger-line{
+  width:25px; height:3px;
+  background:#fff;
+  transition:.3s;
 }
 
 li a{
@@ -373,19 +389,18 @@ li a.active {
 
 .slider-window {
   overflow: hidden;
-  width: calc(20em * 3 + 20px); 
-  margin: auto;
+  width: 100%;
 }
 
 .comments {
   display: flex;
-  gap: 10px;
-  width: calc(20em * 5 + 40px); 
-  animation: scrollTestimonials 3s linear infinite;
+  gap: 10px; 
+  animation: scrollTestimonials 15s linear infinite;
 }
 
 .feedback {
-  flex: 0 0 20em;
+  min-width: 300px; /* Adjust to fit your card */
+  margin-right: 20px;
 }
 
 .feedback p {
@@ -394,8 +409,14 @@ li a.active {
   font-style: italic;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   line-height: 1.5em;
-  padding: 15px;
+  padding: 20px 10px;
   border-radius: 10px;
+  width: 250px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .feedback p:hover{
@@ -415,6 +436,17 @@ li a.active {
   color: white;
 }
 
+.feedback h4 a{
+  margin: 5px 0 0 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.feedback h4 a:hover{
+    color:#18d26e;
+}
 .feedback h5 {
   margin: 0;
   font-size: 14px;
@@ -469,4 +501,258 @@ li a.active {
 }
 .copyright span{
     color: #18d26e;
+}
+
+
+
+/* =========================================================
+   ⬇️  RESPONSIVE ADD-ONS — place after your existing styles
+   ========================================================= */
+
+/* 1️⃣  Base improvement for keyboard / a11y */
+.hamburger:focus-visible{
+  outline:2px dashed #18d26e;
+  outline-offset:4px;
+}
+
+/* 2️⃣  Large phones & tablets (≤ 991 px)  ----------------- */
+@media (max-width: 991px){
+  body{ width: auto; padding-top:56px; }
+
+  .navigation {
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    width: 50%;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1001;
+    margin-left: 5%;
+  }
+
+  .hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s;
+  }
+
+  /* .navigation ul {
+    position: absolute;
+    top: 10cqmin;
+    left: 10%;
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.582);
+    padding: 20px 0;
+    gap: 20px;
+    display: none;
+    text-align: center;
+  } */
+
+  .navigation ul {
+    position: absolute;
+    top: 10cqmin;
+    left: 10%;
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.582);
+    padding: 10px 10px;
+    gap: 20px;
+    display: none;
+    text-align: center;
+  }
+
+  .navigation ul.active {
+    display: flex;
+  }
+
+/* Optional: hamburger animation */
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+  /* --------  Hero / intro paragraph  -------- */
+  .paragraph{
+    width:85%;
+    padding-top:0;
+    margin-top: 0;
+  }
+  .paragraph h1{ font-size:clamp(28px,7vw,38px); margin-top: 0; }
+  .paragraph p{ line-height:26px; margin-top: 0;}
+
+  /* --------  “Bio” section (image + data)  -------- */
+  .content{
+    flex-direction:column;
+    align-items:center;
+    gap:30px;
+  }
+  .image{
+    width:80%;
+    max-width:320px;
+    height:auto;
+  }
+  .data{
+    width:90%;
+    padding-right:0;
+    text-align:center;
+  }
+  .data h3{ font-size:clamp(26px,6vw,34px); }
+  
+  /* --------  Skills  -------- */
+  .skills-section{ padding:0 5%; }
+  .skills-section h2{ font-size:clamp(28px,6.5vw,34px); }
+  .skills-container{
+    flex-direction:column;
+    gap:0px;
+  }
+
+  /* --------  Interests grid  -------- */
+    .categories {
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
+  }
+  
+  .categories .feature {
+    grid-column: span 1;
+  }
+
+ /* -------- Testimonials slider -------- */
+ .testimonials{
+    width: 800px;
+ } 
+ 
+ .comments{
+    gap: 0px;
+    width: calc(1em * 2 + 5px);
+  }
+  .feedback{
+    width: 150px;
+  }
+  .feedback p{
+    width: 200px;
+    padding: 5px 3px;
+  }
+  @keyframes scrollTestimonials {
+  5% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(calc(-200px * 3)); /* 300 width + 20 margin x 3 items */
+  }
+}
+  /* Intro section */
+  .intro h3{ font-size:clamp(24px,6vw,32px); }
+  .intro p{
+    width:90%;
+    margin:0 auto;
+    font-size:clamp(14px,4vw,16px);
+  }
+
+}
+/* 2️⃣  Phones (≤ 767 px)  ───────────────────────────────── */
+@media (max-width: 767px){
+
+  /* Paragraph / intro */
+  .paragraph{ padding-top:22vh; }
+
+  /* Image + data */
+  .image{ width:90%; }
+  .data h3{ font-size:clamp(24px,7vw,30px); }
+.data ul{ grid-template-columns:2fr; text-align:left; }
+
+  /* Skills */
+  .skills-section h4{ font-size:clamp(16px,4.5vw,18px); }
+
+  /* Interests: single column */
+   .categories {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  /* Feature items can now be shown as 2 separate boxes */
+  .categories .feature {
+    grid-column: span 1;
+  }
+    
+    .feedback {
+        flex: 0 0 100%;
+        max-width: 350px;
+    }
+    
+    .feedback p {
+        height: 180px;
+        padding: 15px;
+    }
+@keyframes scrollTestimonials {
+  5% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(calc(-200px * 3)); /* 300 width + 20 margin x 3 items */
+  }
+
+
+}
+}
+
+/* 3️⃣  Extra-small phones (≤ 480 px)  ───────────────────── */
+@media (max-width: 480px){
+
+  body{ padding-top:48px; }
+
+  /* Intro paragraph tighter */
+  .paragraph{ padding-top:5vh; }
+
+  /* Skills padding */
+  .skills-section{ width: 250px; justify-self: center; padding:0 4%; }
+
+  /* Interest heading sizes */
+  .interest h3{ font-size:clamp(20px,7vw,26px); }
+  .interest h4{ font-size:clamp(16px,5vw,18px); }
+/* -------- Interests/Categories Grid -------- */
+  .categories {
+    grid-template-columns: repeat(1, 1fr); justify-self: center;
+  }
+  
+  /* Special case: feature items can show 2 when space allows */
+  .categories .feature {
+    grid-column: span 1;
+  }
+
+  /* Testimonials full width */
+  .testimonials h3{
+    width: 50%;
+  font-size: 25px;
+ }
+  .slider-window{ width:40%; }
+  .comments{ gap: 2px; width: calc(5em * 2 + 10px); }
+   .intro h3{ font-size:clamp(20px,7vw,26px); }
+  .intro p{ font-size:clamp(12px,4.5vw,14px); }
+  @keyframes scrollTestimonials {
+  5% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(calc(-200px * 3)); /* 300 width + 20 margin x 3 items */
+  }
+
+}
+
 }

@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="projects.css">
 </head>
 <body>
+     <button class="hamburger">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        </button>
+
+   
     <div class="navigation">
            <ul>
                 <li><a href="index.html">Home</a></li>
@@ -20,7 +27,7 @@
 
     
     <div class="paragraph">
-        <h1>project</h1>
+        <h1>Project</h1>
         <p>Welcome to my project! I'm a versatile and passionate developer and designer offering services in backend development, Python programming, full-stack web development, graphic design, and MS Office documentation. With a strong foundation in modern technologies and a creative approach to problem-solving, I build efficient, user-friendly solutions tailored to your needs. Explore my work below and see how I can help bring your ideas to life.</p>
     </div>
 
@@ -97,5 +104,25 @@
         <p>Copyright <span>Personal</span> All Rights Reserved</p>
         <p>Designed by <span>Umehani Shah</span></p>
     </div>
+
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.navigation ul');
+    
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('.navigation a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+  });
+</script>
 </body>
 </html>

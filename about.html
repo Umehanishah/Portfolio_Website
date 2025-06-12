@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="about.css">
 </head>
 <body>
+     <button class="hamburger">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        </button>
+
+   
     <div class="navigation">
            <ul>
                 <li><a href="index.html">Home</a></li>
@@ -202,36 +209,46 @@
                 <div class="feedback">
                         <p>"Working with Umehani has been an absolute pleasure. Their dedication, creativity, and attention to detail consistently exceeded expectations."</p>  
                     <img src="images/hamza.jpg" alt="hamza">
-                    <h4>Amir Hamza</h4>
+                    <h4><a href="https://www.linkedin.com/in/hamzacreative/"> Amir Hamza</a></h4>
                     <h5>Entrepreneur</h5>
                 </div>
 
                 <div class="feedback">
-                        <p>"Working with Umehani has been an absolute pleasure. Their dedication, creativity, and attention to detail consistently exceeded expectations."</p>
+                        <p>"Impressed by the quality and attention to detail! Umehani exceeded my expectations. Highly recommend!"</p>
                     <img src="images/Wasay.jpg" alt="Wasay">
-                    <h4>Syed Hafiz Abdul Wasay</h4>
+                    <h4><a href="https://www.linkedin.com/in/syed-hafiz-abdul-wasay-b15929255/"> Hafiz Abdul Wasay</a></h4>
                     <h5>Mentor</h5>
                 </div>
 
                 <div class="feedback">
-                        <p>"Working with Umehani has been an absolute pleasure. Their dedication, creativity, and attention to detail consistently exceeded expectations."</p>
-                    <img src="images/Noor.jpg" alt="noor">
-                    <h4>Noorul Huda</h4>
-                    <h5>Freelancer</h5>
+                        <p>"Umehani delivered exceptional work—creative, timely, and highly skilled. A true professional!"</p>
+                    <img src="images/hamzah.jpg" alt="hamzah">
+                    <h4><a href="https://www.linkedin.com/in/webdeveloper-react-jamstack-expert/"> Hamzah Syed</a></h4>
+                    <h5>Web developer at Upwork</h5>
+                </div>
+
+                                <div class="feedback">
+                        <p>"Working with Umehani has been an absolute pleasure. Their dedication, creativity, and attention to detail consistently exceeded expectations."</p>  
+                    <img src="images/hamza.jpg" alt="hamza">
+                    <h4><a href="https://www.linkedin.com/in/hamzacreative/"> Amir Hamza</a></h4>
+                    <h5>Entrepreneur</h5>
                 </div>
 
                 <div class="feedback">
-                        <p>"Working with Umehani has been an absolute pleasure. Their dedication, creativity, and attention to detail consistently exceeded expectations."</p>
-                    <img src="images/Hanzalah.jpg" alt="Hanzalah">
-                    <h4>Hanzalah</h4>
-                    <h5>Designer</h5>
+                        <p>"Impressed by the quality and attention to detail! Umehani exceeded my expectations. Highly recommend!"</p>
+                    <img src="images/Wasay.jpg" alt="Wasay">
+                    <h4><a href="https://www.linkedin.com/in/syed-hafiz-abdul-wasay-b15929255/"> Hafiz Abdul Wasay</a></h4>
+                    <h5>Mentor</h5>
                 </div>
 
                 <div class="feedback">
-                        <p>"Working with Umehani has been an absolute pleasure. Their dedication, creativity, and attention to detail consistently exceeded expectations."</p>
-                    <img src="images/Sarah.jpg" alt="sarah">
-                    <h4>Sarah Willssom</h4>
-                    <h5>CEO</h5>
+                        <p>"Umehani delivered exceptional work—creative, timely, and highly skilled. A true professional!"</p>
+                    <img src="images/hamzah.jpg" alt="hamzah">
+                    <h4><a href="https://www.linkedin.com/in/webdeveloper-react-jamstack-expert/"> Hamzah Syed</a></h4>
+                    <h5>Web developer at Upwork</h5>
+                </div>
+
+                
                 </div>
             </div>
         </div>
@@ -268,5 +285,25 @@
         <p>Designed by <span>Umehani Shah</span></p>
     </div>
     
+
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.navigation ul');
+    
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('.navigation a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+  });
+</script>
 </body>
 </html>

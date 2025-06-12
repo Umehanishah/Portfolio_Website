@@ -189,3 +189,126 @@ li a.active {
 .copyright span{
     color: #18d26e;
 }
+
+
+/* =========================================================
+   ⬇️  RESPONSIVE ADD-ONS — place after your existing styles
+   ========================================================= */
+
+/* 1️⃣  Base improvement for keyboard / a11y */
+.hamburger:focus-visible{
+  outline:2px dashed #18d26e;
+  outline-offset:4px;
+}
+
+/* 2️⃣  Large phones & tablets (≤ 991 px)  ----------------- */
+@media (max-width: 991px){
+  body{ padding-top:56px; }
+
+  .navigation {
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1001;
+    margin-left: 5%;
+  }
+
+  .hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s;
+  }
+
+  .navigation ul {
+    position: absolute;
+    top: 5cqmin;
+    left: 10%;
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.582);
+    padding: 20px 0;
+    gap: 20px;
+    display: none;
+    text-align: center;
+  }
+
+  .navigation ul.active {
+    display: flex;
+  }
+
+/* Optional: hamburger animation */
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+  /* Hero banner tweaks */
+  .banner{
+    padding-top:20vh;          /* push content down a bit */
+    margin-left:5%;
+    line-height:1.4em;
+  }
+  .banner h1{ font-size:clamp(32px,8vw,56px); }
+  .banner h3{ font-size:clamp(16px,4.5vw,28px); }
+
+  /* Social links */
+  .link{ gap:12px; }
+  .link img{ width:22px; height:22px; padding:4px; }
+
+  /* Intro section */
+  .intro h3{ font-size:clamp(24px,6vw,32px); }
+  .intro p{
+    width:90%;
+    margin:0 auto;
+    font-size:clamp(14px,4vw,16px);
+  }
+}
+
+/* 3️⃣  Phones (≤ 767 px)  -------------------------------- */
+@media (max-width: 767px){
+  /* Shorter hero so everything is visible */
+  .main{ height:60vh; }
+
+  /* Stacked mobile menu */
+  .navigation ul{
+    gap:24px;
+    padding:60px 0 30px;
+    font-size:14px;
+  }
+
+  /* Scale icons a bit */
+  .link img,
+  .link-2 img{
+    width:24px; height:24px; padding:4px;
+  }
+}
+
+/* 4️⃣  Extra-small phones (≤ 480 px)  --------------------- */
+@media (max-width: 480px){
+  .main{ height:40vh; }        /* little more room for content */
+  .banner{
+    padding-top:10vh;
+    margin-left:4%;
+  }
+  .banner h1{ font-size:clamp(28px,9vw,44px); }
+  .banner h3{ font-size:clamp(14px,5vw,20px); gap:4px; }
+  .intro h3{ font-size:clamp(20px,7vw,26px); }
+  .intro p{ font-size:clamp(12px,4.5vw,14px); }
+}
